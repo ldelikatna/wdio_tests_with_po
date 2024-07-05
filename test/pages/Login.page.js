@@ -7,8 +7,8 @@ class LoginPage extends BasePage {
 
     get loginBtn() { return $('#login-button'); }
 
-    async performLogin(userName, password) {
-        await this.userName.setValue(userName);
+    async performLogin(username, password) {
+        await this.userName.setValue(username);
         await this.password.setValue(password);
         await this.loginBtn.click();
     }
