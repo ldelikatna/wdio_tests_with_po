@@ -5,14 +5,14 @@ async function verifyNameSorting(order, option) {
     const sortedNames = await pages.inventoryPage.sortedItemsNames(order);
     await pages.inventoryPage.selectSortOption(option);
     const expectedNamesOrder = await pages.inventoryPage.getNames(order);
-    expect(JSON.stringify(sortedNames) === JSON.stringify(expectedNamesOrder)).toBe(true);
+    expect(sortedNames).toEqual(expectedNamesOrder);
 }
 
 async function verifyPriceSorting(order, option) {
     const sortedPrices = await pages.inventoryPage.sortedItemsPrices(order);
     await pages.inventoryPage.selectSortOption(option);
     const expectedPricesOrder = await pages.inventoryPage.getPrices(order);
-    expect(JSON.stringify(sortedPrices) === JSON.stringify(expectedPricesOrder)).toBe(true);
+    expect(sortedPrices).toEqual(expectedPricesOrder);
 }
 
 describe('My First Test', () => {
