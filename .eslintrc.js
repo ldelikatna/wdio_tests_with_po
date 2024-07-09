@@ -26,6 +26,8 @@ module.exports = {
         ecmaVersion: 'latest',
     },
     rules: {
+        'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
+        'class-methods-use-this': 'off',
         indent: [
             'error',
             4,
@@ -33,6 +35,7 @@ module.exports = {
                 SwitchCase: 1,
             },
         ],
+
         'max-len': ['error', {
             code: 120,
             ignoreComments: true,
