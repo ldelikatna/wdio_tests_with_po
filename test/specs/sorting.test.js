@@ -4,14 +4,14 @@ const users = require('../data/users');
 async function verifyNameSorting(order, option) {
     const sortedNames = await pages.inventoryPage.sortedItemsNames(order);
     await pages.inventoryPage.selectSortOption(option);
-    const expectedNamesOrder = await pages.inventoryPage.getNames(order);
+    const expectedNamesOrder = await pages.inventoryPage.getNames();
     expect(sortedNames).toEqual(expectedNamesOrder);
 }
 
 async function verifyPriceSorting(order, option) {
     const sortedPrices = await pages.inventoryPage.sortedItemsPrices(order);
     await pages.inventoryPage.selectSortOption(option);
-    const expectedPricesOrder = await pages.inventoryPage.getPrices(order);
+    const expectedPricesOrder = await pages.inventoryPage.getPrices();
     expect(sortedPrices).toEqual(expectedPricesOrder);
 }
 
